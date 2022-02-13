@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "ca0f6492-8e56-4731-8e2a-0792757c7787",
+		"name": "Api Customer Registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastrar usuário da aplicação",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"luizot\",\r\n    \"senha\": \"9901\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validar usuario na aplicação",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"luizot\",\r\n    \"senha\": \"9901\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/usuarios/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"usuarios",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar clientes",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWl6b3QiLCJleHAiOjE2NDQ3MTQ2OTB9.XI6C-D4bVLXSdEn7NE2ePb13y9EYbeKqI70_8sa8xoUXUzTQ1w6Qr9GwwCQUnA5TYUsX0cj6UkcA65L36XSPOA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Luiz\",\r\n    \"cpf\": \"34398464077\",\r\n    \"dataNascimento\": \"1995-05-16\",\r\n    \"genero\": \"HOMEM\",\r\n    \"endereco\": {\r\n                    \"logradouro\": \"Av. Nsa Copacabana\",\r\n                    \"numero\": 181,\r\n                    \"bairro\": \"Copacabana\",\r\n                    \"cidade\": \"Rio de Janeiro\",\r\n                    \"pais\": \"Brasil\",\r\n                    \"cep\": \"22456890\"   \r\n                }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar cliente por ID",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWl6b3QiLCJleHAiOjE2NDQ3MTQ2OTB9.XI6C-D4bVLXSdEn7NE2ePb13y9EYbeKqI70_8sa8xoUXUzTQ1w6Qr9GwwCQUnA5TYUsX0cj6UkcA65L36XSPOA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/clientes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um cliente",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWl6b3QiLCJleHAiOjE2NDQ3MTQ2OTB9.XI6C-D4bVLXSdEn7NE2ePb13y9EYbeKqI70_8sa8xoUXUzTQ1w6Qr9GwwCQUnA5TYUsX0cj6UkcA65L36XSPOA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"clientes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar clientes com paginacao",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWl6b3QiLCJleHAiOjE2NDQ3MTQ2OTB9.XI6C-D4bVLXSdEn7NE2ePb13y9EYbeKqI70_8sa8xoUXUzTQ1w6Qr9GwwCQUnA5TYUsX0cj6UkcA65L36XSPOA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/clientes/paginado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"clientes",
+						"paginado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar clientes sem paginacao",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWl6b3QiLCJleHAiOjE2NDQ3MTQ2OTB9.XI6C-D4bVLXSdEn7NE2ePb13y9EYbeKqI70_8sa8xoUXUzTQ1w6Qr9GwwCQUnA5TYUsX0cj6UkcA65L36XSPOA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/clientes/nao-paginado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"clientes",
+						"nao-paginado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por atributo",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWl6b3QiLCJleHAiOjE2NDQ3MTQ2OTB9.XI6C-D4bVLXSdEn7NE2ePb13y9EYbeKqI70_8sa8xoUXUzTQ1w6Qr9GwwCQUnA5TYUsX0cj6UkcA65L36XSPOA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/api/clientes/atributo?attribute=nome&value=Luiz&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"clientes",
+						"atributo"
+					],
+					"query": [
+						{
+							"key": "attribute",
+							"value": "nome"
+						},
+						{
+							"key": "value",
+							"value": "Luiz"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar os dados de um cliente",
+			"protocolProfileBehavior": {
+				"followAuthorizationHeader": false
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWl6b3QiLCJleHAiOjE2NDQ3MTQ2OTB9.XI6C-D4bVLXSdEn7NE2ePb13y9EYbeKqI70_8sa8xoUXUzTQ1w6Qr9GwwCQUnA5TYUsX0cj6UkcA65L36XSPOA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Joaozinho e Maria\",\r\n    \"cpf\": \"34398464077\",\r\n    \"dataNascimento\": \"1995-05-16\",\r\n    \"genero\": \"HOMEM\",\r\n    \"endereco\": {\r\n                    \"logradouro\": \"Av. Nsa Copacabana\",\r\n                    \"numero\": 181,\r\n                    \"bairro\": \"Copacabana\",\r\n                    \"cidade\": \"Rio de Janeiro\",\r\n                    \"pais\": \"Brasil\",\r\n                    \"cep\": \"22456890\"   \r\n                }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/clientes/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"clientes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
